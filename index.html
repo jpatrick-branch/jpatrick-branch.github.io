@@ -1,172 +1,43 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta name="deepview-service" content="deepview-service">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,300" rel="stylesheet" type="text/css">
-    <style>
-        body {
-            margin: 0;
-            word-wrap: break-word;
-        }
-
-        /* ============ Portrait ============ */
-        .main-image {
-            width: 125px;
-            height: 125px;
-            margin: 20vh auto 0 auto;
-
-            background-image: url(https://cdn.branch.io/branch-assets/1663292018651-og_image.png);
-
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom center;
-        }
-
-        #content-container {
-            box-sizing: border-box;
-            padding: 24px;
-            margin: 0 24px 0 24px;
-            background-color: #ffffff;
-        }
-
-        .app-title {
-            font-size: 14px;
-            text-align: center;
-            padding-bottom: 11px;
-            text-transform: uppercase;
-        }
-
-        .input-wrapper {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 110px !important;
-            background-color: white;
-            -webkit-box-shadow: 0px -20px 20px -8px rgba(255, 255, 255, 1);
-            -moz-box-shadow: 0px -20px 20px -8px rgba(255, 255, 255, 1);
-            box-shadow: 0px -20px 20px -8px rgba(255, 255, 255, 1);
-        }
-
-        .input-container {
-            width: 100%;
-            padding: 0 24px;
-            text-align: center;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .form-get-the-app {
-            text-align: center;
-            padding-top: 10px;
-        }
-
-        .form-get-the-app>input {
-            margin-right: 10px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            background-color: #FFFFFF;
-            border: 1px solid #979797;
-            border-radius: 2px;
-            font-size: 60px;
-            color: #CECECE;
-            line-height: 24px;
-            padding-left: 20px;
-        }
-
-        .cta-button {
-            display: block;
-            height: 62px;
-            line-height: 62px;
-            background-color: #06122F;
-            border-radius: 2px;
-            font-size: 20px;
-            padding: 0 20px;
-            margin: 0 20px;
-            color: #FFFFFF;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        /* No data (portrait) */
-        @media only screen and (orientation: portrait) {
-            .card--no-data .main-image {
-
-                background-image: url(https://cdn.branch.io/branch-assets/1663292018651-og_image.png);
-            }
-        }
-
-        /* ============ Landscape ============ */
-        @media only screen and (orientation: landscape) {
-            .main-image {
-                margin: 30px auto 0 auto;
-            }
-
-            #content-container {
-                padding: 10px 24px;
-            }
-
-            .input-wrapper {
-                height: 80px !important;
-            }
-
-            .input-container {
-                width: 50%;
-                margin: 0 auto;
-            }
-
-            .form-get-the-app {
-                padding-top: 8px;
-            }
-
-            .cta-button {
-                height: 44px;
-                line-height: 44px;
-            }
-        }
-
-        /* Reusables */
-        .text-bold {
-            font-family: "Open Sans", Helvetica, serif;
-            font-weight: 700
-        }
-
-        .text-light {
-            font-family: "Open Sans", Helvetica, serif;
-            font-weight: 400;
-        }
-    </style>
-</head>
-
 <body>
-<div class="card center">
-    <div class="main-image"></div>
-    <div id="content-container">
-        <div class="app-title text-bold">ShopBack</div>
-    </div>
-    <div class="input-wrapper">
-        <div class="input-container">
-            <form class="form-get-the-app">
-                <a href="market://details?id=com.shopback.app&_branch_match_id=1172253013032507195&referrer=link_click_id%253D1172253013032507195%2526utm_source%253DNewsletter%2526utm_campaign%253D%255BDE%2520Online%255D%2520Newsletter%2520-%2520RAF%2526utm_medium%253DCRM%2526af_ref%253Dbranch_1187772854750011395"
-                   class="cta-button text-light">Get The App</a>
-            </form>
-        </div>
-    </div>
-</div>
-<script type="text/javascript">
-    function validateProtocol(url){
-        var parser = document.createElement("a");
-        parser.href = url;
-        var protocol = parser.protocol.toLowerCase();
-        if ([ "javascript:", "vbscript:", "data:", "ftp:", ":", " "].indexOf(protocol) < 0) {
-            return url;}
-        return null;
-    }
-    window.onload = function() {setTimeout(function timeout() {var iframe = document.createElement("iframe");iframe.style.border = "none";iframe.style.width = "1px";iframe.style.height = "1px";iframe.src = validateProtocol("shopback://content/campaign/referafriend?_branch_referrer=H4sIAAAAAAAAE8soKSkottLXTywo0CvOyC9ISkzO1kvOz9UvTkpJ1S1KTAMASaHKtyEAAAA%3D&link_click_id=1172253013032507195");document.body.appendChild(iframe);setTimeout(function timeout() {if (document.webkitHidden || document.hidden) { return; }window.top.location = validateProtocol("market://details?id=com.shopback.app&_branch_match_id=1172253013032507195&referrer=link_click_id%253D1172253013032507195%2526utm_source%253DNewsletter%2526utm_campaign%253D%255BDE%2520Online%255D%2520Newsletter%2520-%2520RAF%2526utm_medium%253DCRM%2526af_ref%253Dbranch_1187772854750011395");}, 500);}, 250);};
-</script>
+	<script type="text/javascript">
+		function unescapeHtml(escaped_str) {
+		    var div = document.createElement('div');
+		    div.innerHTML = escaped_str;
+		    var child = div.childNodes[0];
+		    return child ? child.nodeValue : null;
+		}
+		
+		function validateProtocol(url) {
+			var parser = document.createElement('a');
+		    parser.href = url;
+		    var protocol = parser.protocol.toLowerCase();
+			if ([ 'javascript:',  'vbscript:',  'data:', 'ftp:',':' , ' '].indexOf(protocol) < 0) {
+				return url;
+			}
+			return null;
+		}
+		
+		function validate(url) {
+			var unescaped_value = unescapeHtml(url);
+			if (unescaped_value && validateProtocol(unescaped_value)) {
+				return unescaped_value;
+			}
+			return '/';
+		}			window.onload = function() {
+				var i = "Bec4jOpoyBMVlKWdmzgNy7%2BUIupYC2uMDxcXCpz2tyAxxGWWIwbTNxCFa4HlKUfo";
+				var initial_redirect = "https://blibli.app.link/cHkj4RYvVzb?_p=c91d29c69d1c65f3e6038cfee8";
+
+				if (i && localStorage._i == null) { localStorage.setItem("_i", i); }
+
+				var separator = initial_redirect.indexOf("?") !== -1 ? "&" : "?";
+
+				window.top.location = validate(initial_redirect + separator + "_i=" + localStorage._i);
+			};
+	</script>
+	<iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
 </body>
 
 </html>
