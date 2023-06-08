@@ -1,45 +1,176 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
-<body>
-	<script type="text/javascript">
-		function unescapeHtml(escaped_str) {
-		    var div = document.createElement('div');
-		    div.innerHTML = escaped_str;
-		    var child = div.childNodes[0];
-		    return child ? child.nodeValue : null;
-		}
-		
-		function validateProtocol(url) {
-			var parser = document.createElement('a');
-		    parser.href = url;
-		    var protocol = parser.protocol.toLowerCase();
-			if ([ 'javascript:',  'vbscript:',  'data:', 'ftp:',':' , ' '].indexOf(protocol) < 0) {
-				return url;
+<head>
+	<script></script>
+	<style>
+		@media screen and (max-width:768px) {
+			.personalized .pagination-container__top__nav {
+				flex-wrap: wrap;
+				justify-content: center
 			}
-			return null;
-		}
-		
-		function validate(url) {
-			var unescaped_value = unescapeHtml(url);
-			if (unescaped_value && validateProtocol(unescaped_value)) {
-				return unescaped_value;
+
+			.personalized .pagination__nav {
+				margin-bottom: 5px !important
 			}
-			return '/';
-		}			window.onload = function() {
-				var i = "Bec4jOpoyBMVlKWdmzgNy7%2BUIupYC2uMDxcXCpz2tyAxxGWWIwbTNxCFa4HlKUfo";
-// 				var initial_redirect = "https://blibli.app.link/cHkj4RYvVzb?_p=c91d29c69d1c65f3e6038cfee8";
-				var initial_redirect = "https://blibli.app.link/beachwearserene-fb?_p=c91d29c69d1c65f3e6038cfee8";
-			
 
-				if (i && localStorage._i == null) { localStorage.setItem("_i", i); }
+			.personalized .pagination-container {
+				bottom: -35px !important
+			}
 
-				var separator = initial_redirect.indexOf("?") !== -1 ? "&" : "?";
+			.favourite-other .favourite__mobile {
+				margin: 0 auto
+			}
 
-				window.top.location = validate(initial_redirect + separator + "_i=" + localStorage._i);
-			};
+			#main-ui-wrapper .slide-placeholder {
+				margin-bottom: 8px
+			}
+
+			.favourite-other .favourite__mobile-item {
+				height: 82px
+			}
+		}
+	</style>
+	<script>
+		if (typeof Object['__defineSetter__'] !== 'function') {
+      window.location.replace("https://www.blibli.com/pages/unsupported-browser");
+    }
 	</script>
-	<iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
+	<script>
+		var parcelRequire;
+    var _bwaq = _bwaq || [];
+    var akcr = akcr || [];
+    var dataLayer = window.dataLayer || []
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        'appType': 'spa'
+      });
+    }
+    var _spapi = _spapi || [];
+    _spapi.push(['_partner', 'blibli']);
+
+    // nr
+    window._NR_ACCOUNT_ID = '1599910';
+    window._NR_TRUST_KEY = '1219217';
+    window._NR_AGENT_ID = '112531800';
+    window._NR_LICENSE_KEY = '44c8bccbbf';
+    window._NR_APPLICATION_ID = '325157811';
+
+    // thematic header
+    window._BLIBLI_LOGO_URL = 'https://www.static-src.com/siva/coreasset/03_2023/1680150476707/Ramadhan-2023---Skin-Homepage_DesktopHeaderLogo.png';
+    window._BACKGROUND_HEADER_DESKTOP_URL = '';
+    window._BACKGROUND_HEADER_MOBILE_URL = '';
+    window._BACKGROUND_CAROUSEL_MOBILE_URL = '';
+    window._FESTIVE_MODE = 'false';
+
+    // hide section
+    window._HIDDEN_HOME_MOBILE_SECTIONS = 'C3_RECOMMENDATION,POPULAR_CATEGORY,TRENDING_SEARCH'
+    window._HIDDEN_HOME_DESKTOP_SECTIONS = 'C3_RECOMMENDATION,POPULAR_CATEGORY,TRENDING_SEARCH,NOTICE_BOARD'
+
+    // wallet section
+    window._MCDOMO_PUBLIC_PATH = 'mcdomo.id'
+	</script>
+	<title>Online Mall Blibli.com, Sensasi Belanja Online Shop ala Mall</title>
+	<meta name=robots content="index, follow, max-image-preview:large">
+	<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+	<meta http-equiv=X-UA-Compatible content="IE=edge">
+	<meta http-equiv=origin-trial
+		content=AllxSN0BrDmI9f9koUyx9fcVvuJ1gJDgZwqVVrYfgGuioD1brzdJ+xc37gw5OAznh+/Ump5CV1FtoKjtoMiKKQsAAABneyJvcmlnaW4iOiJodHRwczovL3d3dy5ibGlibGkuY29tOjQ0MyIsImZlYXR1cmUiOiJDb250ZW50SW5kZXgiLCJleHBpcnkiOjE1OTQxNjYzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==>
+		<meta name=viewport
+		content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel=manifest href=/sw/manifest.json> <meta name=theme-color content=#0095DA>
+	<link rel=icon type=image/png sizes=16x16 href=https://www.static-src.com/frontend/static/icons/blibli-favicon.png>
+		<link rel=apple-touch-icon href=https://www.static-src.com/frontend/static/icons/blibli-favicon.png> <meta
+		property=og:site_name content=Blibli.com>
+	<meta property=og:url content=https://www.blibli.com/> <meta property=og:type content=website>
+	<meta property=og:image itemprop=image content=https://www.static-src.com/siva/asset//10_2022/Blibli.png> <meta
+		property=og:image:secure_url itemprop=image content=https://www.static-src.com/siva/asset//10_2022/Blibli.png>
+		<meta name=twitter:card content=summary>
+	<meta name=twitter:url content=https://www.blibli.com/> <meta name=twitter:image
+		content=https://www.static-src.com/siva/asset//10_2022/Blibli.png> <meta name=twitter:site
+		content=@bliblidotcom>
+	<meta name=twitter:creator content=@bliblidotcom>
+	<link href=https://www.blibli.com/opensearch.xml title="Blibli.com Search"
+		type=application/opensearchdescription+xml rel=search>
+	<link rel=search type=application/opensearchdescription+xml href=/opensearch.xml title="Blibli.com search">
+	<meta name=google-site-verification content=MHFbr8QmlzUCNbIerYPFGYS6s6TlmEcTDUPrYC3MPIw>
+	<link rel="amphtml"
+		href="https://www.blibli.com/amp/merchant/serene-official-store/SEW-70026?utm_source=facebook&utm_campaign=smd_fwa_serenebeachwear_19mei2023_traffic&utm_medium=social&_branch_referrer=H4sIAAAAAAAAE8soKSkottLXT8rJBCK9xIICvZzMvGz9ZI%2FsLJOgyLKwqiT7%2BExb40TLIrOiImPzkkKz1PyofJ8Qz5TkiKJcw%2BJQN2cTy1TDiAoXJ1Ujp1Sf9DRP5yJVIzczIC5ISjTINXTMM8wI9ikJ9CkEAOfPHnRtAAAA&_i=3a9r6rr37tq6eoZoLTIdcXrm1sUFC49e1XxDB%2BeLgfICr%2F6%2Fpba0m1An1hSLtQLq&_branch_match_id=1195346935047601155" />
+	<script>
+		// assign public path
+    function attachPublicPath(type) {
+      window['_' + type + '_staticPublicPath'] = function () {
+        return 'https://www.static-src.com/frontend/' + (type && type !== '' && type !== 'main' ? type + '/' : '')
+      }
+    }
+    attachPublicPath('main')
+    window._env_prefix = ''
+    var modules = ['member','product','retail','retail-thank-you','retail-assets/checkout','retail-assets/change-payment','retail-bundling-catalog','catalog','member-return','member-cases','member-official','wallet','content','content-flashsale','review','member-voucher','member-reward','instore','product-cnc','member-digital','ticket-voucher','financial-service-order','travel','product-detail','order-retail','subscription','product-trade-in','product-add-on','member-wishlist','advertisement','insurance','sellerchat']
+    var collabs = ['3.84.0-2','1.68.0-2','2.71.0-9','0.20.0-1','1.2.0-15','1.1.0-1','1.3.0-1','3.3.0-38','1.45.0-2','1.12.0-1','1.25.0-10','1.53.0-5','1.61.0-6','0.4.0-9','1.24.0-2','1.17.0-3','1.29.0-7','1.10.5-4','1.9.0-6','1.51.0-7','1.23.0-2','1.17.0-2','1.24.0-1','1.50.1-2','1.37.0-3','1.27.0-4','1.14.0-2','1.9.0-1','2.3.0-1','1.0.11-1','1.12.0-1','2.1.5-1']
+    for (var i = 0; i < modules.length; i++) {
+      var mod = modules[i]
+      attachPublicPath(mod)
+      window['_' + mod + '_ver'] = collabs[i]
+    }
+    window._static_image_path = 'https://www.static-src.com/wcsstore/Indraprastha/'
+    window._homepage_component = 'histeria11-11'
+    window._blibli_version = '4.77.0-17'
+	</script>
+	<script>
+		(function () {
+    function __vitePluginPublicPath_addLinkTag(rel, href, integrity) {
+      var link = document.createElement("link");
+      link.rel = rel;
+      link.href = href;
+      if (integrity) { link.integrity = integrity; };
+      document.head.appendChild(link);
+    }
+    __vitePluginPublicPath_addLinkTag("stylesheet", window['_main_staticPublicPath']() + "static\u002Findex.b39e27b6.css", undefined)
+  })();
+	</script>
+	<style>
+		@font-face {
+			font-display: fallback;
+			font-family: effra;
+			src: url('https://www.static-src.com/fonts/1.0.0/effra/effra-regular.woff2') format('woff2'), url('https://www.static-src.com/fonts/1.0.0/effra/effra-regular.ttf') format('truetype')
+		}
+
+		@font-face {
+			font-display: fallback;
+			font-family: efframedium;
+			src: url('https://www.static-src.com/fonts/1.0.0/effra/effraMedium-regular.woff2') format('woff2'), url('https://www.static-src.com/fonts/1.0.0/effra/efframedium-regular.ttf') format('truetype')
+		}
+	</style>
+	<script type="module">try{import.meta.url;import("_").catch(()=>1);}catch(e){}window.__vite_is_modern_browser=true;
+	</script>
+	<script type="module">
+		!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy build because dynamic import or import.meta.url is unsupported, syntax error above should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();
+	</script>
+	<script>
+		bazadebezolkohpepadr="962706927"
+	</script>
+	<script type="text/javascript" src="https://www.blibli.com/akam/13/3961bdd6" defer></script>
+</head>
+
+<body><noscript>Please use the latest browser and enable javascript.</noscript>
+	<div id="app"></div>
+	<div id="chat-button"></div>
+	<blibli-script></blibli-script>
+	<script src="/sw/companion/v1/companion.js" data-service-worker="/serviceworker.js" defer="defer"></script>
+	<script>
+		(function () {
+    function __vitePluginPublicPath_addScriptTag(attributes, inlineScriptCode) {
+      var script = document.createElement("script");
+      if (attributes) for (var key in attributes) script.setAttribute(key, attributes[key]);
+      script.async = false;
+      if (inlineScriptCode) script.src = "data:text/javascript," + inlineScriptCode;
+      document.body.appendChild(script);
+    }
+    __vitePluginPublicPath_addScriptTag({ "src": window['_main_staticPublicPath']() + "\u002Fstatic\u002Fvendor\u002Fnr\u002Fv5\u002Findex.js" });__vitePluginPublicPath_addScriptTag({ "type": "module", "crossorigin": "", "src": window['_main_staticPublicPath']() + "static\u002Fjs\u002Findex.9dbf8375.js" });__vitePluginPublicPath_addScriptTag({ "nomodule": "" }, "!function(){var e=document,t=e.createElement(\"script\");if(!(\"noModule\"in t)&&\"onbeforeload\"in t){var n=!1;e.addEventListener(\"beforeload\",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute(\"nomodule\")||!n)return;e.preventDefault()}),!0),t.type=\"module\",t.src=\".\",e.head.appendChild(t),t.remove()}}();");__vitePluginPublicPath_addScriptTag({ "nomodule": "", "crossorigin": "", "id": "vite-legacy-polyfill", "src": window['_main_staticPublicPath']() + "static\u002Fjs\u002Fpolyfills-legacy.a5f0ced8.js" });__vitePluginPublicPath_addScriptTag({ "nomodule": "", "crossorigin": "", "id": "vite-legacy-entry", "data-src": window['_main_staticPublicPath']() + "static\u002Fjs\u002Findex-legacy.38b90d47.js" }, "System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))")
+  })();
+	</script>
+	<noscript><img src="https://www.blibli.com/akam/13/pixel_3961bdd6?a=dD1kODVlZWM5MDY5ZjE1N2RiZmI5OTg3OGYzN2M2YWQ3ZjlkODEwOWEwJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript>
+		<script type="text/javascript" src="/FZPNug/oUBe0/5AZ2t/vQ/k7YuQbGkVb/MHNfInI/HEwEODI/LTFo"></script>
 </body>
 
 </html>
