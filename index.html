@@ -1,22 +1,179 @@
-<!DOCTYPE html>
+
 <html>
-
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta property="og:type" content="music.song">
-	<meta property="og:title" content="under pressure">
-	<meta property="og:url" content="www.branch.com">
-	<meta property="og:image" content="https://i.scdn.co/image/ab67616d0000b273c12b6aa3d50150032e455286">
-	<meta property="og:description" content="test for branch">
-	<meta property="og:audio" content="https://p.scdn.co/mp3-preview/ac51a1452c7731cce52feba9506c76ecbc1a593c">
-	<meta property="music:musician" content="">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,300" rel="stylesheet" type="text/css" />
-	
+<script>
+
+// Check if the user agent or platform contains specific strings to identify the OS
+function detectOS() {
+  const userAgent = navigator.userAgent;
+  const platform = navigator.platform;
+
+  const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
+  const macPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
+  const iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+  const androidPlatforms = ['Android'];
+
+  if (windowsPlatforms.includes(platform)) {
+    return 'WINDOWS';
+  } else if (macPlatforms.includes(platform)) {
+    return 'MAC';
+  } else if (iosPlatforms.includes(platform)) {
+    return 'IOS';
+  } else if (androidPlatforms.includes(platform)) {
+    return 'ANDROID';
+  } else {
+    return 'Unknown';
+  }
+}
+
+const deviceIdUri = "bncdeviceid://open";
+const action = "https://spotify.app.link";
+const macStore = "macappstores://apps.apple.com/us/app/hp-smart-for-desktop/id1474276998";
+const windowsStore = "ms-windows-store://pdp/?PFN=AD2F1837.HPPrinterControl_v10z8vjag6ke6";
+const iosStore = "itms-app://apps.apple.com/us/app/hp-smart-for-desktop/id1474276998";
+const androidStore = "market://open";
+const deviceIdUniversalLink = "https://universal.deviceidfinder.com/";
+const spotifyAndroidIntent = encodeURIComponent("intent://playlist/37ugjArAauIqlVJUNyCFWj#Intent;scheme=spotify;package=com.spotify.music;S.browser_fallback_url=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F37ugjArAauIqlVJUNyCFWj%3Fsi%3DJGeN9HU-QQ6yOI7FrMD2vg%26nd%3D1%26utm_medium%3Dsharing%26_branch_match_id%3D1233466270614082569%26_branch_referrer%3DH4sIAAAAAAAAA8soKSkottLXLy7IL8lMq9TLyczL1g9PLvfxciyw9KpMAgA%252Bv5dkIAAAAA%253D%253D;S.market_referrer=link_click_id-1233466270614082569%26utm_source%3DBranch%26utm_medium%3Dsharing;S.branch_data=%7B%22%24fallback_url%22%3A%22https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F37ugjArAauIqlVJUNyCFWj%3Fsi%3DJGeN9HU-QQ6yOI7FrMD2vg%26nd%3D1%22%2C%22%2Burl%22%3A%22https%3A%2F%2Fspotify.link%2FWcwLJAp9Jyb%22%2C%22~tags%22%3A%5B%22short_links_test%22%5D%2C%22%24deeplink_path%22%3A%22playlist%2F37ugjArAauIqlVJUNyCFWj%22%2C%22%24share_id%22%3A%22JGeN9HU-QQ6yOI7FrMD2vg%22%2C%22~creation_source%22%3A0%2C%22~id%22%3A%221172047041514177548%22%2C%22%24canonical_url%22%3A%22https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F37ugjArAauIqlVJUNyCFWj%3Fsi%3DJGeN9HU-QQ6yOI7FrMD2vg%22%2C%22%24uri%22%3A%22spotify%3Aplaylist%3A37ugjArAauIqlVJUNyCFWj%22%2C%22custom_data%22%3A%5B%5D%2C%22~feature%22%3A%22sharing%22%2C%22%2Bdomain%22%3A%22spotify.app.link%22%2C%22%2Bclick_timestamp%22%3A1695319502%2C%22%2Bclicked_branch_link%22%3Atrue%2C%22%2Bmatch_guaranteed%22%3Atrue%2C%22%2Bis_first_session%22%3Afalse%7D;B.branch_intent=true;end");
+
+function getStoreRedirectByOS(os) {
+  if (os === 'WINDOWS') {
+    return windowsStore;
+  } else if (os === 'MAC') {
+    return macStore;
+  } else if (os === 'IOS') {
+    return iosStore;
+  } else if (os === 'ANDROID') {
+    return androidStore;
+  } else {
+    return 'Unknown';
+  }
+}
+
+function basicRedirectToTargetPage(base, redirect) {
+    window.location.href = `${base}?primary=${redirect}`;
+}
+
+function redirectToTargetPage(base) {
+  const store = getStoreRedirectByOS(detectOS());
+  const url = `${base}?primary=${deviceIdUri}&action=${action}&secondary=${encodeURIComponent(store)}`;
+
+  // Redirect to the target page
+  window.location.href = url;
+}
+
+window.onload = function() {
+  console.log("onload");
+}
+
+window.onfocus = function() {
+  console.log("focus");
+}
+
+window.onblur = function() {
+  console.log("blur");
+}
+
+function locationOpenUriScheme() {
+    window.location = deviceIdUri
+}
+
+function locationTopOpenUriScheme() {
+    window.top.location = deviceIdUri
+}
+
+function locationTopDesktopLink() {
+    window.top.location = "https://google.com"
+}
+
+function locationTopUniversalLink() {
+    window.top.location = deviceIdUniversalLink
+}
+
+function iframeOpenUriScheme() {
+    var iframe = document.createElement("iframe");
+    iframe.style.border = "none";
+    iframe.style.width = "1px";
+    iframe.style.height = "1px";
+    iframe.src = "bncdeviceid://open";
+    document.body.appendChild(iframe);
+}
+
+function function2() {
+	window.location = "macappstores://apps.apple.com/us/app/hp-smart-for-desktop/id1474276998"
+}
+
+function function3() {
+	window.location = "ms-windows-store://pdp/?PFN=AD2F1837.HPPrinterControl_v10z8vjag6ke6"
+}
+
+function function6() {
+	window.top.location = "macappstores://apps.apple.com/us/app/hp-smart-for-desktop/id1474276998"
+}
+
+function function8() {
+	window.top.location = "ms-windows-store://pdp/?PFN=AD2F1837.HPPrinterControl_v10z8vjag6ke6"
+}
+
+</script>
 </head>
-
 <body>
-	
-	
-</body>
 
+
+<br>
+<input type="button" value="window.location: device id finder uri scheme" onclick="locationOpenUriScheme()">
+<br>
+<input type="button" value="window.top.location: device id finder uri scheme" onclick="locationTopOpenUriScheme()">
+<br>
+<input type="button" value="window.top.location: device id finder uri desktop link" onclick="locationTopDesktopLink()">
+<br>
+<input type="button" value="window.top.location: device id finder universal link" onclick="locationTopUniversalLink()">
+<br>
+<input type="button" value="window.location: Mac App Store for HP Smart" onclick="function2()">
+<br>
+<input type="button" value="window.location: MS Windows Store for HP Smart" onclick="function3()">
+<br>
+<input type="button" value="window.top.location mac app store" onclick="function6()">
+<br>
+<input type="button" value="window.top.location MS Windows store" onclick="function8()">
+<br>
+<input type="button" value="iframe.src: device id finder uri scheme" onclick="iframeOpenUriScheme()">
+<br>
+<br>
+<h3> Deepview Redirect Logic Debug </h3>
+<a href="#" onclick="redirectToTargetPage('deepview/DEFER_IFRAME.html')">DEFER_IFRAME</a>
+<br>
+<a href="#" onclick="redirectToTargetPage('deepview/IFRAME_WINDOW_AUTO_FALLBACK.html')">IFRAME_WINDOW_AUTO_FALLBACK</a>
+<br>
+<a href="#" onclick="redirectToTargetPage('deepview/WINDOW_LOCATION_AUTO_FALLBACK.html')">WINDOW_LOCATION_AUTO_FALLBACK</a>
+<br>
+<a href="#" onclick="redirectToTargetPage('deepview/WINDOW_LOCATION_AUTO_FALLBACK_desktop.html')">WINDOW_LOCATION_AUTO_FALLBACK desktop</a>
+<br>
+<a href="#" onclick="redirectToTargetPage('deepview/IFRAME_WINDOW_AUTO_FALLBACK_FACEBOOK_ANDROID.html')">IFRAME_WINDOW_AUTO_FALLBACK_FACEBOOK_ANDROID</a>
+<br>
+<a href="#" onclick="redirectToTargetPage('deepview/WINDOW_LOCATION_COOKIE.html')">WINDOW_LOCATION_COOKIE</a>
+<br>
+<a href="#" onclick="redirectToTargetPage('deepview/WINDOW_LOCATION_COOKIE.html')">COPY_CLIPBOARD</a>
+<br>
+<a href="#" onclick="redirectToTargetPage('deepview/WINDOW_LOCATION_COOKIE.html')">WINDOW_LOCATION_COPY_CLIPBOARD</a>
+<br>
+<br>
+<h3> Basic Redirects Debug </h3>
+<a href="#" onclick="basicRedirectToTargetPage('basic/WINDOW_LOCATION.html', deviceIdUri)">WINDOW_LOCATION uri scheme</a>
+<br>
+<a href="#" onclick="basicRedirectToTargetPage('basic/WINDOW_LOCATION.html', deviceIdUniversalLink)">WINDOW_LOCATION universal link</a>
+<br>
+<a href="#" onclick="basicRedirectToTargetPage('basic/WINDOW_LOCATION.html', spotifyAndroidIntent)">WINDOW_LOCATION android intent</a>
+<br>
+<a href="#" onclick="basicRedirectToTargetPage('basic/WINDOW_LOCATION.html', `https://google.com`)">WINDOW_LOCATION web url</a>
+<br>
+<a href="#" onclick="basicRedirectToTargetPage('basic/IFRAME_SRC.html', deviceIdUri)">IFRAME_SRC uri scheme</a>
+<br>
+<a href="#" onclick="basicRedirectToTargetPage('basic/IFRAME_SRC.html', deviceIdUniversalLink)">IFRAME_SRC universal link</a>
+<br>
+<a href="#" onclick="basicRedirectToTargetPage('basic/IFRAME_SRC.html', spotifyAndroidIntent)">IFRAME_SRC android intent</a>
+<br>
+<a href="#" onclick="basicRedirectToTargetPage('basic/IFRAME_SRC.html', `https://google.com`)">IFRAME_SRC web url</a>
+<br>
+
+</body>
 </html>
