@@ -6,7 +6,12 @@
 const urlParams = new URLSearchParams(window.location.search);
 const primary = decodeURIComponent(urlParams.get('primary'));
 
-window.onload = function() {window.top.location = primary;};
+window.onload = function() {
+  window.top.location = primary;
+  alert("no error thrown");
+  const element = document.getElementById("pending-redirect");
+  element.remove();
+};
 
 </script>
 </head>
@@ -21,6 +26,8 @@ window.onload = function() {window.top.location = primary;};
     action = usually a branch link, sometimes used as the fallback by some templates
     <br>
     secondary = the fallback in most cases, instead of action
+
+    <div id="pending-redirect">Pending Redirect</div>
   </div>
 </body>
 </html>
