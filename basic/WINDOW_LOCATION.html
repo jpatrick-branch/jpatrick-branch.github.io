@@ -5,7 +5,11 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 const primary = decodeURIComponent(urlParams.get('primary'));
+addEventListener("error", (event) => {
+  alert(event);
+});
 
+onerror = (event, source, lineno, colno, error) => {};
 window.onload = function() {
   window.top.location = primary;
   alert("no error thrown");
